@@ -1,0 +1,11 @@
+<launch>
+
+  <arg name="gpsd_host" default="gpsd" />
+  <arg name="gpsd_port" default="2947" />
+
+  <node name="gpsd_client" pkg="gpsd_client" type="gpsd_client">
+    <param name="host" value="$(arg gpsd_host)" type="string" />
+    <param name="port" value="$(arg gpsd_port)" type="int" />
+  </node>
+
+</launch>

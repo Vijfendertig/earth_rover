@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  gpsd:
+    build: ./gpsd
+    devices:
+      - "/dev/serial0:/dev/gps0"
+  earth-rover:
+    build:
+      context: ../..
+      dockerfile: ./docker/earth-rover/earth-rover/Dockerfile
+    depends_on:
+      - gpsd

@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  gpsd:
+    build: ./gpsd
+    devices:
+      - "/dev/serial0:/dev/gps0"
+  earth-rover-dev:
+    build: ./earth-rover-dev
+    volumes:
+      - ../..:/home/ros/earth_rover
+    depends_on:
+      - gpsd
+    stdin_open: true
+    tty: true
