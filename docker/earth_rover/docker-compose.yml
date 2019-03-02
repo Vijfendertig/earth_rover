@@ -5,9 +5,9 @@ services:
     build: ./gpsd
     devices:
       - "/dev/serial0:/dev/gps0"
-  earth-rover:
+  ros:
     build:
       context: ../..
-      dockerfile: ./docker/earth-rover/earth-rover/Dockerfile
+      dockerfile: ./docker/earth_rover/ros/Dockerfile
     depends_on:
       - gpsd

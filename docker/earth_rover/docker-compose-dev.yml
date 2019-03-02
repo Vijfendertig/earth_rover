@@ -6,7 +6,7 @@ services:
     devices:
       - "/dev/serial0:/dev/gps0"
   earth-rover-dev:
-    build: ./earth-rover-dev
+    build: ./ros-dev
     volumes:
       - ../..:/home/ros/earth_rover
     depends_on:
